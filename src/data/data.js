@@ -137,11 +137,11 @@ export const USER_AVERAGE_SESSIONS = [
             },
             {
                 day: 5,
-                sessionLength: 0
+                sessionLength: 30
             },
             {
                 day: 6,
-                sessionLength: 0
+                sessionLength: 20
             },
             {
                 day: 7,

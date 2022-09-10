@@ -48,7 +48,7 @@ const SideBarText = styled.p`
   line-height: 24px;
   margin: 0;
 `
-export function SideBar({defaultActive}) {
+export function SideBar() {
   
 
   const SidebarItems = [
