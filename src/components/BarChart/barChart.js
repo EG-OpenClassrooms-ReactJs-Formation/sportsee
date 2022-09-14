@@ -24,9 +24,11 @@ export class BarChartDouble extends PureComponent {
         >
           <CartesianGrid
             strokeDasharray="2 2"
+            
             vertical={false}
           />
           <XAxis tickLine={false} axisLine={false}/>
+          {/* <YAxis orientation="right" dataKey="kilogram" domain={['auto', 'auto']}/> */}
           <YAxis orientation="right"/>
           <Tooltip 
             content={CustomTooltip} 
@@ -34,7 +36,8 @@ export class BarChartDouble extends PureComponent {
               backgroundColor: "#e60000", 
               color: colors.ternary,
               justifyContent: 'center',
-              alignContent: "center"
+              alignContent: "center",
+              outline: 'none'
             }}
           />
           {/* <Legend layout="horizontal" verticalAlign="start" align="right" /> */}

@@ -33,7 +33,10 @@ const DashBoardTitlesContainer = styled.div`
   flex-direction: column;
   
 `
-
+const DashBoardTitleName = styled.strong`
+  color: ${colors.primary};
+  
+`
 const DashBoardDataContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -76,7 +79,9 @@ const MeanSessionTitle = styled.h2`
   color: rgba(255, 255, 255, 0.4);
   padding-left: 25px;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 22px;
+  flex-wrap: wrap;
+  max-width: 170px;
 `
 const ScoreChartContainer = styled.div`
   background-color: ${colors.quadrary};
@@ -124,7 +129,7 @@ export default function DashBoard() {
 
         <DashBoardContainer>
             <DashBoardTitlesContainer>
-                <h1>Bonjour {userData.userInfos.firstName}</h1>
+                <h1>Bonjour <DashBoardTitleName>{userData.userInfos.firstName}</DashBoardTitleName></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </DashBoardTitlesContainer>
 

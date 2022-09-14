@@ -5,7 +5,7 @@ import { UserAverageSession } from '../../models/models';
 import { USER_AVERAGE_SESSIONS } from '../../data/data';
 
 const dataFormated = new UserAverageSession(USER_AVERAGE_SESSIONS[0].userId, USER_AVERAGE_SESSIONS[0].sessions)
-
+/*
 const data = [
   {
     name: 'L',
@@ -50,7 +50,7 @@ const data = [
     amt: 2100,
   },
 ];
-
+*/
 export default class MeanSession extends PureComponent {
 
   render() {
@@ -77,7 +77,6 @@ export default class MeanSession extends PureComponent {
           
         />
         
-        
         <Tooltip 
           //wrapperStyle={{ outline: 'none', color: 'black' }}
           //labelStyle={{color: 'black'}}
@@ -85,7 +84,7 @@ export default class MeanSession extends PureComponent {
           //
           //wrapperStyle={{ zIndex: 1000 }}
         
-          wrapperStyle={{ backgroundColor: "white" }}
+          wrapperStyle={{ backgroundColor: "white", outline: 'none' }}
           labelStyle={{ display: 'none' }}
           itemStyle={{ color: "black" }}
           content={<CustomTooltip />}
