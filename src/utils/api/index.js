@@ -11,7 +11,7 @@ export class ApiService {
             await fetch(urlCall)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                
                 const dataFormated = new UserMainData(
                     userId, 
                     data.data.userInfos.firstName,
@@ -33,19 +33,51 @@ export class ApiService {
         await fetch(urlCall)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
-            const dataFormated = new UserMainData(
+            
+            const dataFormated = new UserActivity(
                 userId, 
-                data.data.userInfos.firstName,
-                data.data.userInfos.lastName,
-                data.data.userInfos.age,
-                data.data.todayScore,
-                data.data.keyData
+                data.data.sessions
             )
             
             setStateData(dataFormated)
             setStateError(false)
         })
         .catch(err => console.error(err));
-}
+    }
+
+    async getUserAverageSession(userId, setStateData, setStateError){
+        
+        const urlCall = this.apiUrl.concat(`user/${userId}/average-sessions`)
+        await fetch(urlCall)
+        .then(response => response.json())
+        .then(data => {
+            
+            const dataFormated = new UserAverageSession(
+                userId, 
+                data.data.sessions
+            )
+            
+            setStateData(dataFormated)
+            setStateError(false)
+        })
+        .catch(err => console.error(err));
+    }
+
+    async getUserPerformance(userId, setStateData, setStateError){
+        
+        const urlCall = this.apiUrl.concat(`user/${userId}/performance `)
+        await fetch(urlCall)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.data)
+            var dataFormated = new UserPerformance(
+                userId,
+                data.data.data
+            );
+            
+            setStateData(dataFormated)
+            setStateError(false)
+        })
+        .catch(err => console.error(err));
+    }
 }

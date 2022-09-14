@@ -5,13 +5,15 @@ import colors from '../../utils/style/colors'
 import { BarChartDouble } from '../../components/BarChart/barChart'
 import {USER_MAIN_DATA} from '../../data/data'
 import MeanSession from '../../components/MeanSession/meanSession'
-import {UserMainData} from '../../models/models'
+import {UserMainData, UserActivity, UserPerformance, UserAverageSession} from '../../models/models'
 import ScoreChart from '../../components/ScoreChart/scoreChart'
 import IndicatorCard from '../../components/IndicatorCard/indicatorCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSwimmer, faBiking, } from '@fortawesome/free-solid-svg-icons'
 import PerformanceChart from '../../components/PerformanceChart/performanceChart'
 import { ApiService } from '../../utils/api'
+import IndicatorCardList from '../../components/IndicatorCardList/indicatorCard'
+import Error from '../Error/error404'
 
 const DashBoardWrapper = styled.div`
   display: flex;
@@ -116,16 +118,25 @@ export default function DashBoard() {
 
     const [userMainData, setUserMainData] = useState(new UserMainData())
     const [userMainDataError, setUserMainDataError] = useState(false)
+    const [userActivity, setUserActivity] = useState(new UserActivity())
+    const [userActivityError, setUserActivityError] = useState(false)
+    const [userAverageSession, setUserAverageSession] = useState(new UserAverageSession())
+    const [userAverageSessionError, setUserAverageSessionError] = useState(false)
+
+    const [userPerformance, setUserPerformance] = useState(new UserActivity())
+    const [userPerformanceError, setUserPerformanceError] = useState(false)
     // test done with the user ID 12
     
     
     useEffect(() => {
       apiService.getUserMainData(userId, setUserMainData, setUserMainDataError)
-
+      apiService.getUserActivity(userId, setUserActivity, setUserActivityError)
+      apiService.getUserAverageSession(userId, setUserAverageSession, setUserAverageSessionError)
+      apiService.getUserPerformance(userId, setUserPerformance, setUserPerformanceError)
     }, [])
 
     if (userMainDataError === true){
-      return null
+      return <Error/>
     }
     console.log(userMainData.keyData)
     return (
@@ -144,50 +155,44 @@ export default function DashBoard() {
                     <TitleBarChart>
                       Activité quotidienne
                     </TitleBarChart>
-                    <BarChartDouble/>
+                    <BarChartDouble data={userActivity}/>
                   </DashBoardBarChart>
                   <DashBoardMultipleChart>
                     <MeanSessionContainer>
                       <MeanSessionTitle>
                         Durée moyenne des sessions
                       </MeanSessionTitle>
-                      <MeanSession />
+                      <MeanSession data={userAverageSession}/>
                     </MeanSessionContainer>
 
                     <PerformanceChartContainer>
-                      <PerformanceChart/>
+                      <PerformanceChart data={userPerformance}/>
                     </PerformanceChartContainer>
 
                     <ScoreChartContainer>
                       <ScoreChartBackground />
-                      <ScoreChart/>
+                      <ScoreChart data={userMainData.todayScore}/>
                     </ScoreChartContainer>
                   </DashBoardMultipleChart>
                 </DashBoardGraphsContainer>
 
 
-                {/* {
+                 {
                   
                   <DashBoardIndicatorsContainer>
                   {
-                    // Object.keys(userMainData.keyData).map((key, index) =>(
-                    //   <IndicatorCard
-                    //     key={key}
-                    //     fieldName={key}
-                    //     data={userMainData}
-                    //   />
-                    // ))
-                    userMainData.keyData.map((key, index) =>(
+                    Object.keys(userMainData.keyData).map((key, index) =>(
                       <IndicatorCard
                         key={key}
                         fieldName={key}
                         data={userMainData}
                       />
                     ))
+                    
                   }
                   
                 </DashBoardIndicatorsContainer>
-                } */}
+                }
 
             </DashBoardDataContainer>
         </DashBoardContainer>

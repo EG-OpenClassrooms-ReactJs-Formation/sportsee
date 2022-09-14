@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { USER_ACTIVITY } from '../../data/data';
 import colors from '../../utils/style/colors';
 
 
@@ -13,7 +12,7 @@ export class BarChartDouble extends PureComponent {
         <BarChart
           
           height={300}
-          data={USER_ACTIVITY[1].sessions}
+          data={this.props.data.sessions}
           margin={{
             top: 5,
             right: 30,

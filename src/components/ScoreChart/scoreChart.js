@@ -27,7 +27,7 @@ export default class ScoreChart extends PureComponent {
         innerRadius={circleSize/3}
         outerRadius={circleSize/3 + 10}
         barSize={10}
-        data={data}
+        data={[{ name: 'L1', value: this.props.data*100 }]}
         startAngle={90}
         endAngle={450}
         
@@ -57,7 +57,7 @@ export default class ScoreChart extends PureComponent {
         fontSize="28"
         fontWeight="bold"
         >
-        25%
+        {this.props.data * 100}%
         </text>
         <text
         x={circleSize / 2}

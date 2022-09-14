@@ -1,14 +1,19 @@
 
 export class UserMainData{
-    constructor(id, firstName, lastName, age, todayScore, keyData) {
+    constructor(id, firstName, lastName, age, todayScore, 
+        keyData = {
+          calorieCount: 0, proteinCount: 0, 
+          carbohydrateCount: 0, lipidCount: 0}) 
+    {
+      this.keyData = keyData;
       this.id = id;
       this.firstName = firstName;
       this.lastName = lastName;
       this.age = age;
-      this.firstName = firstName;
       this.todayScore = todayScore;
-      this.keyData = keyData;
+      
     }
+    
 }
 
 export class UserActivity{
@@ -28,6 +33,7 @@ export class UserAverageSession{
 
 export class UserPerformance{
   constructor(userId, data) {
+
     this.userId = userId;
     this.data = [
     {
