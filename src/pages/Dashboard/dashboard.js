@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { SideBar } from '../../components/SideBar/SideBar'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
@@ -11,6 +11,7 @@ import IndicatorCard from '../../components/IndicatorCard/indicatorCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSwimmer, faBiking, } from '@fortawesome/free-solid-svg-icons'
 import PerformanceChart from '../../components/PerformanceChart/performanceChart'
+import { ApiService } from '../../utils/api'
 
 const DashBoardWrapper = styled.div`
   display: flex;
@@ -108,28 +109,32 @@ const DashBoardIndicatorsContainer = styled.div`
   width: 258px;
   justify-content: space-between;
 `
-
+const apiService = new ApiService()
 export default function DashBoard() {
+    const userId = 12
+    // Declaration of the state variables
 
+    const [userMainData, setUserMainData] = useState(new UserMainData())
+    const [userMainDataError, setUserMainDataError] = useState(false)
     // test done with the user ID 12
-    const UserID = 12
-    const userData = USER_MAIN_DATA.filter(x => x.id === UserID)[0]
-    const userDataFormated = new UserMainData(
-      UserID, 
-      userData.userInfos.firstName,
-      userData.userInfos.lastName,
-      userData.userInfos.age,
-      userData.todayScore,
-      userData.keyData
-    )
-    console.log(userData)
+    
+    
+    useEffect(() => {
+      apiService.getUserMainData(userId, setUserMainData, setUserMainDataError)
+
+    }, [])
+
+    if (userMainDataError === true){
+      return null
+    }
+    console.log(userMainData.keyData)
     return (
     <DashBoardWrapper>
         <SideBar/>
 
         <DashBoardContainer>
             <DashBoardTitlesContainer>
-                <h1>Bonjour <DashBoardTitleName>{userData.userInfos.firstName}</DashBoardTitleName></h1>
+                <h1>Bonjour <DashBoardTitleName>{userMainData.firstName}</DashBoardTitleName></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </DashBoardTitlesContainer>
 
@@ -160,18 +165,29 @@ export default function DashBoard() {
                   </DashBoardMultipleChart>
                 </DashBoardGraphsContainer>
 
-                <DashBoardIndicatorsContainer>
+
+                {/* {
+                  
+                  <DashBoardIndicatorsContainer>
                   {
-                    Object.keys(userDataFormated.keyData).map((key, index) =>(
+                    // Object.keys(userMainData.keyData).map((key, index) =>(
+                    //   <IndicatorCard
+                    //     key={key}
+                    //     fieldName={key}
+                    //     data={userMainData}
+                    //   />
+                    // ))
+                    userMainData.keyData.map((key, index) =>(
                       <IndicatorCard
                         key={key}
                         fieldName={key}
-                        data={userDataFormated}
+                        data={userMainData}
                       />
                     ))
                   }
                   
                 </DashBoardIndicatorsContainer>
+                } */}
 
             </DashBoardDataContainer>
         </DashBoardContainer>
