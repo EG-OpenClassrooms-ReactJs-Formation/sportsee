@@ -70,21 +70,26 @@ const TitleBarChart = styled.h2`
 const DashBoardMultipleChart = styled.div`
   display: flex;
   gap: 30px;
-  
+  max-height: 300px;
 `
 const MeanSessionContainer = styled.div`
   background-color: #ff0000;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  padding-top: 100px;
+  position: relative;
+  
 `
 const MeanSessionTitle = styled.h2`
   color: rgba(255, 255, 255, 0.4);
   padding-left: 25px;
   font-weight: 400;
   font-size: 22px;
+  top: 10px;
   flex-wrap: wrap;
   max-width: 170px;
+  position: absolute;
 `
 const ScoreChartContainer = styled.div`
   background-color: ${colors.quadrary};
@@ -138,7 +143,7 @@ export default function DashBoard() {
     if (userMainDataError === true){
       return <Error/>
     }
-    console.log(userMainData.keyData)
+    
     return (
     <DashBoardWrapper>
         <SideBar/>

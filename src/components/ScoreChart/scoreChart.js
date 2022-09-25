@@ -13,6 +13,7 @@ const data = [
   ];
 
 const circleSize = 300;
+const initialOffset = -20;
 export default class ScoreChart extends PureComponent {
   static demoUrl = 'https://codesandbox.io/s/simple-radial-bar-chart-qf8fz';
   
@@ -50,7 +51,7 @@ export default class ScoreChart extends PureComponent {
         />
         <text
         x={circleSize / 2}
-        y={circleSize / 2}
+        y={circleSize / 2 + initialOffset}
         textAnchor="middle"
         dominantBaseline="middle"
         className="progress-label"
@@ -61,7 +62,7 @@ export default class ScoreChart extends PureComponent {
         </text>
         <text
         x={circleSize / 2}
-        y={circleSize / 2 + 25}
+        y={circleSize / 2 + initialOffset + 25}
         textAnchor="middle"
         dominantBaseline="middle"
         className="progress-label"
@@ -71,7 +72,7 @@ export default class ScoreChart extends PureComponent {
         </text>
         <text
         x={circleSize / 2}
-        y={circleSize / 2 + 50}
+        y={circleSize / 2 + initialOffset + 50}
         textAnchor="middle"
         dominantBaseline="middle"
         className="progress-label"
@@ -79,7 +80,6 @@ export default class ScoreChart extends PureComponent {
         >
         objectif
         </text>
-        
         
       </RadialBarChart>
     

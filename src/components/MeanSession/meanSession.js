@@ -1,18 +1,17 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './meanSession.css'
-import { UserAverageSession } from '../../models/models';
-import { USER_AVERAGE_SESSIONS } from '../../data/data';
 
-//const dataFormated = new UserAverageSession(USER_AVERAGE_SESSIONS[0].userId, USER_AVERAGE_SESSIONS[0].sessions)
 
 export default class MeanSession extends PureComponent {
 
   render() {
+    //console.log(this.props.data.sessions)
+    const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
     return (
-      
+      <ResponsiveContainer width={300} height={200}>
         <LineChart
-          width={500}
+          width={300}
           height={300}
           data={this.props.data.sessions}
           margin={{
@@ -50,9 +49,8 @@ export default class MeanSession extends PureComponent {
           
         />
         
-        
         <Line
-          type="monotone"
+          type="natural"
           strokeWidth={2} 
           // dataKey="pv"
           dataKey="sessionLength"
@@ -62,7 +60,7 @@ export default class MeanSession extends PureComponent {
         />
             
         </LineChart>
-      
+      </ResponsiveContainer>
     );
   }
 }

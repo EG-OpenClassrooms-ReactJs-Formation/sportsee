@@ -21,15 +21,15 @@ export default class PerformanceChart extends PureComponent {
     return (
       
         <RadarChart
-            width={400}
+            width={300}
             height={300}
             cx="50%" 
-            cy="50%" 
-            outerRadius="80%" 
-            data={this.props.data.data}>
+            cy="50%"
+            outerRadius="70%" 
+            data={this.props.data.data}
+        >
           <PolarGrid stroke="white" radialLines={false}/>
-          <PolarAngleAxis dataKey="type" stroke="white" tickLine={false}/>
-          
+          <PolarAngleAxis dataKey="type" stroke="white" tickLine={false} tick={{fontSize: 12, transform: 'translate(0, 3)'}}/>
           <Radar name="Performance" dataKey="value" fill={`${colors.primary}`} fillOpacity={0.8} />
         </RadarChart>
       

@@ -27,7 +27,46 @@ export class UserActivity{
 export class UserAverageSession{
   constructor(userId, sessions) {
     this.userId = userId;
-    this.sessions = sessions
+    this.sessions = sessions;
+    if (this.sessions !== undefined) {
+      this.sessions[0].day = 'L';
+      this.sessions[1].day = 'M';
+      this.sessions[2].day = 'M';
+      this.sessions[3].day = 'J';
+      this.sessions[4].day = 'V';
+      this.sessions[5].day = 'S';
+      this.sessions[6].day = 'D';
+    }
+    // this.sessions = [
+    //   {
+    //     'day': 'M',
+    //     'sessionLength': sessions[0].sessionLength
+    //   },
+    //   {
+    //     'day': 'T',
+    //     'sessionLength': sessions[1].sessionLength
+    //   },
+    //   {
+    //     'day': 'W',
+    //     'sessionLength': sessions[2].sessionLength
+    //   },
+    //   {
+    //     'day': 'T',
+    //     'sessionLength': sessions[3].sessionLength
+    //   },
+    //   {
+    //     'day': 'F',
+    //     'sessionLength': sessions[4].sessionLength
+    //   },
+    //   {
+    //     'day': 'S',
+    //     'sessionLength': sessions[5].sessionLength
+    //   },
+    //   {
+    //     'day': 'S',
+    //     'sessionLength': sessions[6].sessionLength
+    //   },
+    // ]
   }
 }
 
@@ -45,12 +84,12 @@ export class UserPerformance{
       'value': data[1].value
     },
     {
-      'type': 'Endurance',
-      'value': data[2].value
-    },
-    {
       'type': 'Strength',
       'value': data[3].value
+    },
+    {
+      'type': 'Endurance',
+      'value': data[2].value
     },
     {
       'type': 'Speed',

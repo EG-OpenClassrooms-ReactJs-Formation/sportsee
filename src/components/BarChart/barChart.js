@@ -26,9 +26,28 @@ export class BarChartDouble extends PureComponent {
             
             vertical={false}
           />
-          <XAxis tickLine={false} axisLine={false}/>
+          <XAxis 
+            tickLine={false} 
+            axisLine={false}
+          />
           {/* <YAxis orientation="right" dataKey="kilogram" domain={['auto', 'auto']}/> */}
-          <YAxis orientation="right"/>
+          <YAxis
+            yAxisId="right"
+            orientation="right" 
+            tickLine={false} 
+            axisLine={false}
+            dataKey="kilogram"
+            domain={[65, 85]}
+          />
+          <YAxis
+            yAxisId="left"
+            orientation="left" 
+            tickLine={false} 
+            axisLine={false}
+            dataKey="calories"
+            hide={true}
+          />
+          
           <Tooltip 
             content={CustomTooltip} 
             wrapperStyle={{ 
@@ -44,13 +63,13 @@ export class BarChartDouble extends PureComponent {
           <Legend
               verticalAlign="top"
               layout="horizontal"
-              
               align="right"
               wrapperStyle={{
                   paddingBottom: "50px"
               }}
           />
-          <Bar 
+          <Bar
+            yAxisId="right"
             dataKey="kilogram" 
             name="Poids (kg)"
             fill="black"
@@ -58,13 +77,13 @@ export class BarChartDouble extends PureComponent {
             radius={[8,8, 0, 0]}
             legendType={'circle'}
           />
-          <Bar 
+          <Bar
+            yAxisId="left"
             dataKey="calories"
             name= "Calories brûlées (kCal)"
             fill="#e60000" 
             barSize={8}
             radius={[8,8, 0, 0]}
-            
             legendType={'circle'}
           />
           

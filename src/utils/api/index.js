@@ -48,6 +48,7 @@ export class ApiService {
     async getUserAverageSession(userId, setStateData, setStateError){
         
         const urlCall = this.apiUrl.concat(`user/${userId}/average-sessions`)
+
         await fetch(urlCall)
         .then(response => response.json())
         .then(data => {
@@ -56,6 +57,7 @@ export class ApiService {
                 userId, 
                 data.data.sessions
             )
+            console.log(dataFormated.sessions[0])
             
             setStateData(dataFormated)
             setStateError(false)
@@ -69,7 +71,6 @@ export class ApiService {
         await fetch(urlCall)
         .then(response => response.json())
         .then(data => {
-            console.log(data.data)
             var dataFormated = new UserPerformance(
                 userId,
                 data.data.data
