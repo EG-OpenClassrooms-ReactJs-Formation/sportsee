@@ -7,7 +7,7 @@ import { faSwimmer, faBiking, } from '@fortawesome/free-solid-svg-icons'
 const SidebarParent = styled.div`
   background: ${colors.secondary};
   width: 117px;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
