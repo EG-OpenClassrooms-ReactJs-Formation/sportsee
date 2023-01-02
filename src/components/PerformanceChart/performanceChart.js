@@ -3,6 +3,8 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 import colors from '../../utils/style/colors';
 import { USER_PERFORMANCE } from '../../data/data';
 import {UserPerformance} from '../../models/models';
+
+import PropTypes from 'prop-types'
 /*
 var dataFormated = new UserPerformance(
     USER_PERFORMANCE[0].userId,
@@ -35,4 +37,8 @@ export default class PerformanceChart extends PureComponent {
       
     );
   }
+}
+
+PerformanceChart.propTypes = {
+  data: PropTypes.object,
 }

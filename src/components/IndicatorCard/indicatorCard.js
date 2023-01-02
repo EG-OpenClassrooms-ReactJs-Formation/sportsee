@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSwimmer, faBiking, } from '@fortawesome/free-solid-svg-icons'
+import PropTypes from 'prop-types'
 
 const IndicatorWrapper = styled.div`
   display: flex;
@@ -121,4 +122,9 @@ export default function IndicatorCard({fieldName, data}) {
         </TextContainer>
     </IndicatorWrapper>
   )
+}
+
+IndicatorCard.propTypes = {
+  fieldName: PropTypes.string,
+  data: PropTypes.object
 }

@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import colors from '../../utils/style/colors';
-
+import PropTypes from 'prop-types';
 
 export class BarChartDouble extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
 
   render() {
     return (
@@ -105,3 +104,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 	return null;
 };
+
+BarChartDouble.propTypes = {
+  data: PropTypes.object,
+}

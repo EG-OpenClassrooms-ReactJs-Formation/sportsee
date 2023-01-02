@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './meanSession.css'
-
+import PropTypes from 'prop-types';
 
 export default class MeanSession extends PureComponent {
 
@@ -75,3 +75,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 	return null;
 };
+
+MeanSession.propTypes = {
+  data: PropTypes.object
+}

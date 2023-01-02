@@ -34,7 +34,7 @@ const SideBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-​  
+
 `;
 
 const SideBarText = styled.p`

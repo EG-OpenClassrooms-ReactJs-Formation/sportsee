@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const RadialBarChartWrapper = styled.div`
   
@@ -85,4 +86,8 @@ export default class ScoreChart extends PureComponent {
     
     );
   }
+}
+
+ScoreChart.propTypes = {
+  data: PropTypes.number,
 }

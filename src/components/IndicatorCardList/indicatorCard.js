@@ -1,5 +1,6 @@
 import React from 'react'
 import IndicatorCard from '../IndicatorCard/indicatorCard'
+import PropTypes from 'prop-types'
 
 export default function IndicatorCardList(userMainData) {
 
@@ -17,4 +18,8 @@ export default function IndicatorCardList(userMainData) {
     }
     </div>
   )
+}
+
+IndicatorCardList.propTypes = {
+  userMainData: PropTypes.object
 }
