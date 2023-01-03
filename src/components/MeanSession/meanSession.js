@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export default class MeanSession extends PureComponent {
 
   render() {
-    //console.log(this.props.data.sessions)
+    
     const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
     return (
       <ResponsiveContainer width={300} height={200}>
@@ -23,7 +23,7 @@ export default class MeanSession extends PureComponent {
         >
         
         <XAxis 
-          // dataKey="name"
+          
           dataKey="day" 
           stroke="white"
           axisLine={false}

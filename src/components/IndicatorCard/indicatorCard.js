@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSwimmer, faBiking, } from '@fortawesome/free-solid-svg-icons'
+import { faSwimmer, faBiking, faFireAlt, faDrumstickBite, faHamburger} from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 
 const IndicatorWrapper = styled.div`
@@ -45,20 +45,7 @@ const IndicatorTitle = styled.p`
   
 `
 export default function IndicatorCard({fieldName, data}) {
-  const IconList = [
-    {
-        icon: faSwimmer
-    },
-    {
-        icon: faBiking
-    },
-    {
-        icon: faSwimmer
-    },
-    {
-        icon: faSwimmer
-    },
-  ];
+  
   let icon = null
   let unit = null
   let colorIcon = null
@@ -68,21 +55,21 @@ export default function IndicatorCard({fieldName, data}) {
   switch (fieldName)
   {
     case "calorieCount":
-      icon = faSwimmer;
+      icon = faFireAlt;
       unit = "kCal";
       colorIcon = colors.iconFirst;
       colorBack = colors.iconBackFirst;
       fieldTitle = "Calories";
       break
     case "proteinCount":
-      icon = faSwimmer;
+      icon = faDrumstickBite;
       unit = "g";
       colorIcon = colors.iconSecond;
       colorBack = colors.iconBackSecond;
       fieldTitle = "Proteines";
       break
     case "carbohydrateCount":
-      icon = faSwimmer;
+      icon = faHamburger;
       unit = "g";
       colorIcon = colors.iconThird;
       colorBack = colors.iconBackThird;
@@ -96,7 +83,7 @@ export default function IndicatorCard({fieldName, data}) {
       fieldTitle = "Lipides";
       break
     default: 
-      icon = faSwimmer;
+      icon = faHamburger;
       unit = "g";
       colorIcon = colors.iconFirst;
       colorBack = colors.iconBackFirst;

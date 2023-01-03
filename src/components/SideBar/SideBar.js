@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSwimmer, faBiking, } from '@fortawesome/free-solid-svg-icons'
+import { faSwimmer, faBiking, faDumbbell, faRunning} from '@fortawesome/free-solid-svg-icons'
 
 const SidebarParent = styled.div`
   background: ${colors.secondary};
@@ -53,16 +53,16 @@ export function SideBar() {
 
   const SidebarItems = [
     {
+        icon: faRunning
+    },
+    {
         icon: faSwimmer
     },
     {
         icon: faBiking
     },
     {
-        icon: faSwimmer
-    },
-    {
-        icon: faSwimmer
+        icon: faDumbbell
     },
   ];
   return (

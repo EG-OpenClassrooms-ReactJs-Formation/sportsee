@@ -9,7 +9,7 @@ import {UserMainData, UserActivity, UserPerformance, UserAverageSession} from '.
 import ScoreChart from '../../components/ScoreChart/scoreChart'
 import IndicatorCard from '../../components/IndicatorCard/indicatorCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSwimmer, faBiking, } from '@fortawesome/free-solid-svg-icons'
+import { faSwimmer, faBiking, faFire} from '@fortawesome/free-solid-svg-icons'
 import PerformanceChart from '../../components/PerformanceChart/performanceChart'
 import { ApiService } from '../../utils/api'
 import IndicatorCardList from '../../components/IndicatorCardList/indicatorCard'
