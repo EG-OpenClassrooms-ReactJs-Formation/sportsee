@@ -3,6 +3,10 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 import colors from '../../utils/style/colors';
 import PropTypes from 'prop-types';
 
+/**
+* BarChart with the Weight and KCal of the user
+* @param { Object } data // Follow the model UserActivity
+*/
 export class BarChartDouble extends PureComponent {
 
   render() {

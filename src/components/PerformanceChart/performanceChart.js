@@ -5,23 +5,17 @@ import { USER_PERFORMANCE } from '../../data/data';
 import {UserPerformance} from '../../models/models';
 
 import PropTypes from 'prop-types'
-/*
-var dataFormated = new UserPerformance(
-    USER_PERFORMANCE[0].userId,
-    USER_PERFORMANCE[0].data
-);*/
+
+/**
+* RadarChart filled with the different performance indicator
+* of the user
+* @param { Object } data // Follow the model UserPerformance
+*/
+
 export default class PerformanceChart extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-radar-chart-rjoc6';
-  /*
-  constructor(){
-    super();
-    
-  }*/
   
   render() {
-    
     return (
-      
         <RadarChart
             width={300}
             height={300}
@@ -34,7 +28,6 @@ export default class PerformanceChart extends PureComponent {
           <PolarAngleAxis dataKey="type" stroke="white" tickLine={false} tick={{fontSize: 12, transform: 'translate(0, 3)'}}/>
           <Radar name="Performance" dataKey="value" fill={`${colors.primary}`} fillOpacity={0.8} />
         </RadarChart>
-      
     );
   }
 }

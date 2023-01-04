@@ -15,6 +15,12 @@ const data = [
 
 const circleSize = 300;
 const initialOffset = -20;
+
+/**
+* Circular indicator to indicate today score
+* @param { Number } data // Score in %
+*/
+
 export default class ScoreChart extends PureComponent {
   static demoUrl = 'https://codesandbox.io/s/simple-radial-bar-chart-qf8fz';
   

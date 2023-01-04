@@ -37,36 +37,6 @@ export class UserAverageSession{
       this.sessions[5].day = 'S';
       this.sessions[6].day = 'D';
     }
-    // this.sessions = [
-    //   {
-    //     'day': 'M',
-    //     'sessionLength': sessions[0].sessionLength
-    //   },
-    //   {
-    //     'day': 'T',
-    //     'sessionLength': sessions[1].sessionLength
-    //   },
-    //   {
-    //     'day': 'W',
-    //     'sessionLength': sessions[2].sessionLength
-    //   },
-    //   {
-    //     'day': 'T',
-    //     'sessionLength': sessions[3].sessionLength
-    //   },
-    //   {
-    //     'day': 'F',
-    //     'sessionLength': sessions[4].sessionLength
-    //   },
-    //   {
-    //     'day': 'S',
-    //     'sessionLength': sessions[5].sessionLength
-    //   },
-    //   {
-    //     'day': 'S',
-    //     'sessionLength': sessions[6].sessionLength
-    //   },
-    // ]
   }
 }
 

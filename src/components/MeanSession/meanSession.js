@@ -3,6 +3,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import './meanSession.css'
 import PropTypes from 'prop-types';
 
+/**
+* LineChart with the average time of user sessions
+* @param { Object } data // Follow the model UserAverageSession
+*/
 export default class MeanSession extends PureComponent {
 
   render() {

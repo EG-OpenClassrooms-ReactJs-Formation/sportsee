@@ -44,6 +44,12 @@ const IndicatorTitle = styled.p`
   margin: 0;
   
 `
+
+/**
+* A Card filled with user info 
+* @param { String } fieldName // Follow the model userMainData
+* @param { Object } data // An element of an object userMainData
+*/
 export default function IndicatorCard({fieldName, data}) {
   
   let icon = null

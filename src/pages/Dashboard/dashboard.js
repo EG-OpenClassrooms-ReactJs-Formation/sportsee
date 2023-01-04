@@ -135,6 +135,7 @@ const DashBoardIndicatorsContainer = styled.div`
   justify-content: space-between;
 `
 const apiService = new ApiService()
+
 export default function DashBoard() {
     const userId = 12
     // Declaration of the state variables
