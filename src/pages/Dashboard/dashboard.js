@@ -14,7 +14,7 @@ import PerformanceChart from '../../components/PerformanceChart/performanceChart
 import { ApiService } from '../../utils/api'
 import IndicatorCardList from '../../components/IndicatorCardList/indicatorCard'
 import Error from '../Error/error404'
-
+import Header from '../../components/Header/header'
 const DashBoardWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -77,8 +77,26 @@ const MeanSessionContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  padding-top: 100px;
+  //padding-top: 100px;
   position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  &:before{
+    --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  /*   background: radial-gradient(circle closest-side, pink, transparent); */
+  /* background: linear-gradient(red, blue); */
+  background: black;
+  opacity: 0.1;
+  }
+  &:hover::before{
+    --size: 300px;
+  }
   
 `
 const MeanSessionTitle = styled.h2`
@@ -144,6 +162,14 @@ export default function DashBoard() {
       return <Error/>
     }
     
+    const changeGradientPosition = (e) => {
+      let rect = e.target.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
+      console.log(x)
+      const component = document.querySelector('.meanSessionContainer')
+      component.style.setProperty('--x', x + 'px');
+    }
     return (
     <DashBoardWrapper>
         <SideBar/>
@@ -163,7 +189,7 @@ export default function DashBoard() {
                     <BarChartDouble data={userActivity}/>
                   </DashBoardBarChart>
                   <DashBoardMultipleChart>
-                    <MeanSessionContainer>
+                    <MeanSessionContainer className='meanSessionContainer' onMouseMove={changeGradientPosition}>
                       <MeanSessionTitle>
                         Durée moyenne des sessions
                       </MeanSessionTitle>

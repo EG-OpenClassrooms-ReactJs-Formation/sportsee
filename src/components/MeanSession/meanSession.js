@@ -9,28 +9,29 @@ export default class MeanSession extends PureComponent {
     
     const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
     return (
-      <ResponsiveContainer width={300} height={200}>
+      <ResponsiveContainer width={300} height={280}>
         <LineChart
           width={300}
           height={300}
           data={this.props.data.sessions}
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 0,
+            right: 0,
+            left: 15,
+            bottom: 0,
           }}
         >
         
-        <XAxis 
+        <XAxis
           
-          dataKey="day" 
+          dataKey="day"
           stroke="white"
           axisLine={false}
           tickLine={false}
-          
+          dx={-6}
         />
-        
+
+        <YAxis type="number" domain={[-10, 100]} hide={true} />
         <Tooltip 
           //wrapperStyle={{ outline: 'none', color: 'black' }}
           //labelStyle={{color: 'black'}}
@@ -46,7 +47,6 @@ export default class MeanSession extends PureComponent {
             return `${value} min`;
           }}
           
-          
         />
         
         <Line
@@ -57,6 +57,7 @@ export default class MeanSession extends PureComponent {
           stroke="white" 
           dot={false} 
           activeDot={{ r: 8 }} 
+          
         />
             
         </LineChart>

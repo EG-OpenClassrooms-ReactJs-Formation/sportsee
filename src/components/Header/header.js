@@ -16,16 +16,19 @@ const StyledLink = styled(Link)`
 
 const CardLogo = styled.img`
     height: 68px;
-    
+    /* padding-right: 60px; */
 `
 const HeaderWrapper = styled.nav`
   padding-top: 30px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   
   background-color: ${colors.secondary};
-  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* width: 100%; */
 `
 function Header() {
     

@@ -15,7 +15,6 @@ root.render(
   <React.StrictMode>
     <Router>
         <Header />
-        
         <Routes>
           <Route exact path="/" element={<DashBoard/>}></Route>
           <Route path="/404" element={<Error/>}/>
