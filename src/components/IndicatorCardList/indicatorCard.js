@@ -2,10 +2,11 @@ import React from 'react'
 import IndicatorCard from '../IndicatorCard/indicatorCard'
 import PropTypes from 'prop-types'
 
-/**
-* List of IndicatorCards filled with user info 
+/** @function IndicatorCardList
+* @functiondesc List of IndicatorCards filled with user info 
 * @param { Object } userMainData // Follow the model userMainData
 */
+
 export default function IndicatorCardList(userMainData) {
 
   return (

@@ -3,8 +3,8 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 import colors from '../../utils/style/colors';
 import PropTypes from 'prop-types';
 
-/**
-* BarChart with the Weight and KCal of the user
+/** @class BarChartDouble
+* @classdesc BarChart with the Weight and KCal of the user
 * @param { Object } data // Follow the model UserActivity
 */
 export class BarChartDouble extends PureComponent {
@@ -58,7 +58,8 @@ export class BarChartDouble extends PureComponent {
               color: colors.ternary,
               justifyContent: 'center',
               alignContent: "center",
-              outline: 'none'
+              outline: 'none',
+              marginLeft: '20px'
             }}
           />
           {/* <Legend layout="horizontal" verticalAlign="start" align="right" /> */}

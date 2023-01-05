@@ -3,8 +3,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import './meanSession.css'
 import PropTypes from 'prop-types';
 
-/**
-* LineChart with the average time of user sessions
+/** @class MeanSession
+* @classdesc LineChart with the average time of user sessions
 * @param { Object } data // Follow the model UserAverageSession
 */
 export default class MeanSession extends PureComponent {
@@ -42,7 +42,7 @@ export default class MeanSession extends PureComponent {
           //contentStyle={{color: 'black'}}
           //
           //wrapperStyle={{ zIndex: 1000 }}
-        
+          cursor={false}
           wrapperStyle={{ backgroundColor: "white", outline: 'none' }}
           labelStyle={{ display: 'none' }}
           itemStyle={{ color: "black" }}
@@ -59,7 +59,8 @@ export default class MeanSession extends PureComponent {
           // dataKey="pv"
           dataKey="sessionLength"
           stroke="white" 
-          dot={false} 
+          dot={false}
+          
           activeDot={{ r: 8 }} 
           
         />

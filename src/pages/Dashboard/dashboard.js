@@ -171,6 +171,7 @@ export default function DashBoard() {
       const component = document.querySelector('.meanSessionContainer')
       component.style.setProperty('--x', x + 'px');
     }
+    
     return (
     <DashBoardWrapper>
         <SideBar/>
@@ -198,7 +199,13 @@ export default function DashBoard() {
                     </MeanSessionContainer>
 
                     <PerformanceChartContainer>
-                      <PerformanceChart data={userPerformance}/>
+
+                      {
+                        userPerformance.userId ?
+                        <PerformanceChart data={userPerformance}/>
+                        :
+                        null
+                      }
                     </PerformanceChartContainer>
 
                     <ScoreChartContainer>

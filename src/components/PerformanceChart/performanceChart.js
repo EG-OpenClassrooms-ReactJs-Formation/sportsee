@@ -6,15 +6,15 @@ import {UserPerformance} from '../../models/models';
 
 import PropTypes from 'prop-types'
 
-/**
-* RadarChart filled with the different performance indicator
-* of the user
+/** @class PerformanceChart
+* @classdesc RadarChart filled with the different performance indicator of the user
 * @param { Object } data // Follow the model UserPerformance
 */
 
 export default class PerformanceChart extends PureComponent {
   
   render() {
+    console.log(this.props.data.data)
     return (
         <RadarChart
             width={300}
